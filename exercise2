@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+
+interface CounterProps {
+  initialCount?: number; 
+}
+
+const Counter: React.FC<CounterProps> = ({ initialCount = 0 }) => {
+  const [count, setCount] = useState<number>(initialCount);
+
+  const increment = () => {
+    setCount(previous => previous + 1);
+  };
+
+  const decrement = () => {
+    setCount(previous => previous - 1);
+  };
+
+  return (
+    <div>
+      <p>Value: {count}</p>
+      <button onClick={increment}>+1</button>
+      <button onClick={decrement}>-1</button>
+    </div>
+  );
+};
+
+export default Counter;
