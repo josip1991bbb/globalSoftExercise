@@ -1,0 +1,22 @@
+import React, { useState } from 'react';
+
+const CheckComp: React.FC = () => {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+
+  const changeCheckbox = () => {
+    setIsChecked(previus => !previus);
+  };
+
+  return (
+    <div>
+      <input
+        type="checkbox"
+        checked={isChecked}
+        onChange={changeCheckbox}
+      />
+      <p>{isChecked ? 'Checked' : 'Not checked'}</p>
+    </div>
+  );
+};
+
+export default CheckComp;
